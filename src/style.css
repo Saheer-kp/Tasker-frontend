@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* Success Toast */
+[data-sonner-toast][data-type="success"] {
+  --normal-bg: #eff6ff;
+  --normal-border: #93c5fd;
+  --normal-text: #1e3a8a;
+
+  border-radius: 14px !important;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15) !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-title] {
+  font-weight: 600;
+}
+
+[data-sonner-toast][data-type="success"] [data-icon] {
+  color: #2563eb;
+}
