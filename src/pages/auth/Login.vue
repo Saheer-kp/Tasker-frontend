@@ -26,7 +26,7 @@ const submit = async () => {
     const { data } = await login(form)
 
     authStore.setAuth(data.user, data.token)
-    toast.success('Welcome back data.user.name!!')
+    toast.success(`Welcome back ${data.user.name}!!`)
     router.push('/dashboard')
   } catch (error) {
     errors.value = error.errors
