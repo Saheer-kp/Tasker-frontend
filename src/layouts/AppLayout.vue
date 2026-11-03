@@ -1,26 +1,21 @@
 <script setup>
+import AiChatWidget from '@/components/common/AiChatWidget.vue'
 import Header from '@/components/layout/Header.vue'
 import Sidebar from '@/components/layout/Sidebar.vue'
 </script>
 
 <template>
-
-<div class="flex h-screen bg-slate-100">
-
+  <div class="flex h-screen bg-slate-100">
     <Sidebar />
 
     <div class="flex flex-1 flex-col overflow-hidden">
+      <Header />
 
-        <Header />
-
-        <main class="flex-1 overflow-y-auto">
-
-            <RouterView />
-
-        </main>
-
+      <main class="flex-1 overflow-y-auto">
+        <RouterView />
+      </main>
     </div>
 
-</div>
-
+    <AiChatWidget />
+  </div>
 </template>
