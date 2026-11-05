@@ -76,7 +76,7 @@ const renderMarkdown = (content) => {
       class="mb-4 flex h-[500px] w-[350px] flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-2xl"
     >
       <!-- Header -->
-      <div class="flex items-center justify-between bg-indigo-600 px-4 py-3 text-white">
+      <div class="flex items-center justify-between bg-blue-600 px-4 py-3 text-white">
         <div>
           <h3 class="font-semibold">Tasker AI</h3>
           <p class="text-xs text-indigo-100">Your AI assistant</p>
@@ -108,7 +108,9 @@ const renderMarkdown = (content) => {
             v-if="message.content"
             class="max-w-[85%] break-words rounded-xl px-3 py-2 text-sm"
             :class="
-              message.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white text-grey shadow-sm'
+              message.role === 'user'
+                ? 'bg-blue-600 text-white'
+                : 'bg-white text-gray-700 shadow-sm'
             "
           >
             <div
@@ -146,7 +148,7 @@ const renderMarkdown = (content) => {
 
         <button
           :disabled="loading"
-          class="rounded-lg bg-indigo-600 px-4 py-2 text-sm text-white hover:bg-indigo-700"
+          class="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700"
         >
           Send
         </button>
@@ -157,9 +159,29 @@ const renderMarkdown = (content) => {
     <div class="flex justify-end">
       <button
         @click="aiChatStore.isOpen = !aiChatStore.isOpen"
-        class="flex h-14 w-14 items-center justify-center rounded-full bg-indigo-600 text-2xl text-white shadow-lg transition hover:bg-indigo-700"
+        class="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-2xl text-white shadow-lg transition hover:bg-blue-700"
       >
-        {{ aiChatStore.isOpen ? '×' : '💬' }}
+        <!-- {{ aiChatStore.isOpen ? '×' : '💬' }} -->
+        <svg
+          v-if="!aiChatStore.isOpen"
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"
+          />
+        </svg>
+
+        <span v-else class="flex h-7 w-7 items-center justify-center text-3xl leading-none"
+          >&times;</span
+        >
       </button>
     </div>
   </div>
