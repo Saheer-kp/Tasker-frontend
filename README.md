@@ -1,7 +1,9 @@
 
 # Tasker - Task Management Application
 
-Tasker is a AI-featured task management application built with Vue.js to help users organize projects, manage tasks, and track their work efficiently.
+Tasker is an AI-featured public project management platform where anyone can create an account, create their own projects, and invite other users to collaborate on project development.
+
+This repository contains the frontend application built with Vue, providing authentication, project management, task management, and AI-fetured assistance.
 
 ## 🚀 Features
 
