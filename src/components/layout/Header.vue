@@ -14,7 +14,7 @@ class="flex h-16 items-center justify-between border-b border-slate-200 bg-white
         <h1
         class="text-xl font-bold text-slate-800">
 
-            Tasker
+            Your Workspace
 
         </h1>
 
