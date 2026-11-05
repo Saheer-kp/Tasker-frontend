@@ -1,44 +1,123 @@
-# tasker-fe
 
-This template should help get you started developing with Vue 3 in Vite.
+# Tasker - Task Management Application
 
-## Recommended IDE Setup
+Tasker is a AI-featured task management application built with Vue.js to help users organize projects, manage tasks, and track their work efficiently.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Features
 
-## Recommended Browser Setup
+- User Authentication (Login & Register)
+- Project Management
+- Section-based Task Organization
+- Task Assignment and Management
+- Task Status Tracking
+- Task Priority Management
+- AI-powered Chat Assistant
+- Real-time Streaming AI Responses
+- Markdown Rendering for AI Responses
+- Responsive User Interface
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 🛠️ Tech Stack
 
-## Customize configuration
+- **Frontend:** Vue.js 3
+- **State Management:** Pinia
+- **Styling:** Tailwind CSS
+- **HTTP Client:** Axios
+- **AI Integration:** Laravel AI SDK & Google Gemini
+- **Markdown:** Marked
+- **HTML Sanitization:** DOMPurify
+- **Build Tool:** Vite
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 📂 Project Structure
 
-## Project Setup
+```text
+src/
+├── api/
+│   ├── axios.js
+│   └── aiChat.js
+├── components/
+│   └── common/
+│       └── AiChatWidget.vue
+├── stores/
+│   ├── auth.js
+│   └── aiChat.js
+├── views/
+├── router/
+└── App.vue
+```
 
-```sh
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+### 2. Navigate to the Project
+
+```bash
+cd tasker-fe
+```
+
+### 3. Install Dependencies
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 4. Configure Environment Variables
 
-```sh
+Create a `.env` file in the project root:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+
+Update the API URL according to your Laravel backend configuration.
+
+### 5. Start Development Server
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+The application will be available at:
 
-```sh
-npm run build
+```text
+http://localhost:5173
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 🤖 AI Integration
 
-```sh
-npm run lint
-```
+Tasker includes an AI-powered chatbot built using Laravel AI SDK and Google Gemini.
+
+Key highlights:
+
+- Integrated Google Gemini as the AI provider.
+- Custom AI tools to retrieve user-specific task information.
+- Real-time streaming responses.
+- Interactive chatbot interface using Vue.js.
+- Markdown-formatted AI responses.
+
+## 🔗 Backend Repository
+
+The backend is developed separately using Laravel.
+
+**Backend:** https://github.com/Saheer-kp/Tasker-backend
+
+## 📌 Future Improvements
+
+- More AI-powered task management features.
+- Improved project planning assistance.
+- Additional AI tool integrations.
+- Enhanced user experience.
+
+## 👨‍💻 Author
+
+**Saheer KP**
+
+Full Stack Software Engineer
+
+---
+
+⭐ If you find this project interesting, feel free to explore the repository!
