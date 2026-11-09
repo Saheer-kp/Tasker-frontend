@@ -56,7 +56,11 @@ const sendPrompt = async () => {
       }
     })
   } catch (err) {
-    assistantMessage.content = 'Server busy. Please try again later.'
+    if (err.status === 503) {
+      assistantMessage.content = 'Service is temporarily unavailable. Please try again later.'
+    } else {
+      assistantMessage.content = 'Something went wrong. Please try again later.'
+    }
   } finally {
     loading.value = false
   }

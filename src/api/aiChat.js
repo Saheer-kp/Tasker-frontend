@@ -1,4 +1,4 @@
-export const streamAiPrompt = async (prompt, onChunk) => {
+export const streamAiPrompt = async (prompt, onChunk, onToolResult) => {
   const token = localStorage.getItem('token')
 
   const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/v1/ai-chat`, {
@@ -12,7 +12,9 @@ export const streamAiPrompt = async (prompt, onChunk) => {
   })
 
   if (!response.ok) {
-    throw new Error('Unable to get AI response')
+    const error = new Error('Unable to get AI response')
+    error.status = response.status
+    throw error
   }
 
   const contentType = response.headers.get('content-type')
@@ -50,6 +52,14 @@ export const streamAiPrompt = async (prompt, onChunk) => {
       if (data === '[DONE]') return
 
       const payload = JSON.parse(data)
+
+      if (payload.type === 'tool_result' && payload.successful) {
+        const result = JSON.parse(payload.result)
+
+        if (result.success) {
+          await onToolResult?.(result)
+        }
+      }
 
       if (payload.type === 'text_delta') {
         await onChunk(payload.delta)
